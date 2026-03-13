@@ -1,0 +1,40 @@
+default_environment: dev
+project_id: 019ce596-8b1b-765c-8e5e-44c1f8b1e6c1
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: customers
+        path: data/olist_customers_dataset.csv
+        keys: [customer_id]
+      - entity: orders
+        path: data/olist_orders_dataset.csv
+        keys: [order_id]
+      - entity: order_items
+        path: data/olist_order_items_dataset.csv
+        keys: [order_id, order_item_id]
+      - entity: products
+        path: data/olist_products_dataset.csv
+        keys: [product_id]
+      - entity: sellers
+        path: data/olist_sellers_dataset.csv
+        keys: [seller_id]
+  loaders:
+  - name: target-bigquery
+    variant: z3z1ma
+    pip_url: git+https://github.com/z3z1ma/target-bigquery.git setuptools<70
+    config:
+      credentials_path: /Users/ccheng/Library/Mobile Documents/com~apple~CloudDocs/Education/NTU SCTP/Module 2/Project/NTU-DSAI-Mod2-Project/dsai-488403-6360d6c64bf8.json
+      dataset: olist_dataset
+      denormalized: true
+      flattening_enabled: true
+      flattening_max_depth: 1
+      method: batch_job
+      project: dsai-488403
