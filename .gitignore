@@ -6,3 +6,4 @@ output/*.db*
 __pycache__/
 .env
 dsai-488403-6360d6c64bf8.json
+*.csv
