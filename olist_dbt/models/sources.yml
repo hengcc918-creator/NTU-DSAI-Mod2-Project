@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: olist_dataset
+    description: Olist dataset loaded to BigQuery.
+    database: dsai-488403
+    tables:
+      - name: orders

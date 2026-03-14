@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: Order-level fact model materialized as fact_order in star schema.
+    columns:
+      - name: order_id
+        description: Primary key for each order.
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: Customer identifier linked to the order.
+        tests:
+          - not_null
+      - name: order_status
+        description: Final or current status of the order.
