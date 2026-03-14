@@ -5,13 +5,13 @@ sources:
     description: Olist dataset loaded to BigQuery.
     database: dsai-488403
     tables:
-      - name: orders, 
+      - name: orders
         description: Raw orders data from Olist dataset.
-      - name: customers,
+      - name: customers
         description: Raw customers data from Olist dataset.
-      - name: order_items,
+      - name: order_items
         description: Raw order items data from Olist dataset.
-      - name: products_english,
+      - name: products_english
         description: Raw products data from Olist dataset.
-      - name: sellers,
+      - name: sellers
         description: Raw sellers data from Olist dataset.

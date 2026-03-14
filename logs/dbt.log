@@ -49,3 +49,24 @@ Internal Error
 [0m20:27:29.722790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a48b1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a2f8bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109543ad0>]}
 [0m20:27:29.722934 [debug] [MainThread]: Flushing usage events
 [0m20:27:30.890440 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:47:05.286223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d12910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111bfbf90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111bf4c50>]}
+
+
+============================== 11:47:05.289437 | fe6881e4-cc12-4767-9e58-7006c1934313 ==============================
+[0m11:47:05.289437 [info ] [MainThread]: Running with dbt=1.10.9
+[0m11:47:05.289692 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'introspect': 'True', 'profiles_dir': '/Users/ccheng/.dbt', 'no_print': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'debug': 'False', 'warn_error': 'None', 'invocation_command': 'dbt debug', 'empty': 'None', 'static_parser': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'partial_parse': 'True', 'write_json': 'True', 'version_check': 'True', 'quiet': 'False', 'log_cache_events': 'False', 'log_path': 'logs', 'indirect_selection': 'eager'}
+[0m11:47:05.299681 [info ] [MainThread]: dbt version: 1.10.9
+[0m11:47:05.300004 [info ] [MainThread]: python version: 3.11.14
+[0m11:47:05.300150 [info ] [MainThread]: python path: /Users/ccheng/miniconda3/envs/proj/bin/python
+[0m11:47:05.300263 [info ] [MainThread]: os info: macOS-26.3.1-arm64-arm-64bit
+[0m11:47:52.977660 [info ] [MainThread]: Using profiles dir at /Users/ccheng/.dbt
+[0m11:47:52.978041 [info ] [MainThread]: Using profiles.yml file at /Users/ccheng/.dbt/profiles.yml
+[0m11:47:52.978196 [info ] [MainThread]: Using dbt_project.yml file at /Users/ccheng/Library/Mobile Documents/com~apple~CloudDocs/Education/NTU SCTP/Module 2/Project/NTU-DSAI-Mod2-Project/dbt_project.yml
+[0m11:47:52.978348 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m11:47:52.978549 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 47.73372, "process_in_blocks": "0", "process_kernel_time": 3.802618, "process_mem_max_rss": "432160768", "process_out_blocks": "0", "process_user_time": 4.096834}
+[0m11:47:52.978772 [debug] [MainThread]: Command `dbt debug` failed at 11:47:52.978739 after 47.73 seconds
+[0m11:47:52.978896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111bf5050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d8b150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d8b590>]}
+[0m11:47:52.979033 [debug] [MainThread]: Flushing usage events
+[0m11:47:54.034333 [debug] [MainThread]: An error was encountered while trying to flush usage events

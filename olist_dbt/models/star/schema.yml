@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension model sourced from the raw Olist customers table."
+    columns:
+    - name: customer_id
+      description: "Primary key for each customer record."
+      tests:
+        - not_null
+        - unique
+    - name: customer_unique_id
+      description: "Stable unique identifier shared across customer accounts."
+      tests:
+        - not_null
+    - name: customer_zip_code_prefix
+      description: "Customer zip code prefix."
+    - name: customer_city
+      description: "Customer city."
+    - name: customer_state
+      description: "Customer state."
+  - name: dim_order_items
+    description: "Order items dimension model sourced from the raw Olist order items table."
+    columns:
+    - name: order_id
+      description: "Order identifier."
+      tests:
+        - not_null
+    - name: order_line_id
+      description: "Order line identifier derived from order_item_id."
+      tests:
+        - not_null
+    - name: product_id
+      description: "Product identifier for the order line."
+    - name: seller_id
+      description: "Seller identifier for the order line."
+    - name: price
+      description: "Item price amount."
+    - name: freight_value
+      description: "Freight amount for the order line."
+    - name: total_value
+      description: "Total value per order line as price plus freight_value."
+  - name: dim_sellers
+    description: "Seller dimension model sourced from the raw Olist sellers table."
+    columns:
+    - name: seller_id
+      description: "Primary key for each seller record."
+      tests:
+        - not_null
+        - unique
+    - name: seller_zipcode
+      description: "Seller zip code prefix from the source table."
+    - name: seller_city
+      description: "Seller city."
+    - name: seller_state
+      description: "Seller state."
+  - name: dim_products
+    description: "Product dimension model sourced from the raw Olist products table."
+    columns:
+    - name: product_id
+      description: "Primary key for each product record."
+      tests:
+        - not_null
+        - unique
+    - name: product_category_name
+      description: "English product category name."
+      tests:
+        - not_null
