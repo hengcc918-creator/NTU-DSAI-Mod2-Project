@@ -1,0 +1,2 @@
+Lesson learned:
+For dim_order_items, there are quite a lot of duplicated order_id, which is expected as one order can have multiple items as stated in order_line_id columns. Hence this quality check is not applicable for dim_order_items.
