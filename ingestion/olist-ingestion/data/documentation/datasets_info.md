@@ -1,5 +1,5 @@
 ## olist_customers_dataset.csv
-- customer_id: Unique identifier for each customer
+- customer_id: Unique identifier for each customer - this is the primary key for the customers table
 - customer_unique_id: Unique identifier for each customer across all orders
 - customer_zip_code_prefix: The first five digits of the customer's zip code
 - customer_city: The city where the customer is located
