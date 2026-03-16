@@ -1,9 +1,7 @@
 # Overview
-In this project, we have built an end-to-end data pipeline that ingests data from a source, transforms it, and loads it into a destination. The dataset is from the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). 
+In this project, we have built an end-to-end data pipeline that ingests data from a source, transforms it, and loads it into a destination. The dataset is from the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). The dataset contains information about orders, customers, products, and other related data from an e-commerce platform in Brazil. The data pipeline is built using Meltano for data ingestion and dbt for data transformation. The transformed data is then loaded into BigQuery for analysis. The data is dated from 2016-09-04 to 2018-10-17, which is very outdated. However, it is still useful for demonstrating the data pipeline and performing analysis on historical data.
 
-For this project, the business case is to analyze the sales performance of the e-commerce platform, identify trends, and provide insights for improving sales strategies to a mixed audience of business stakeholders and data analysts.
-
-For the purpose of this project, the business topic we have chosen is "Recency, Frequency, and Monetary (RFM) Analysis". This topic is relevant for understanding customer behavior and segmenting customers based on their purchasing patterns, which can help in targeted marketing and improving customer retention. The primary question is "Who are our most valuable customers based on their purchasing behavior?" The secondary question is "How can we segment our customers to tailor marketing strategies effectively?"
+For this project, the business case is to analyze the sales performance of the e-commerce platform, identify trends, and provide insights for improving sales strategies to a mixed audience of business stakeholders and data analysts. The business topic we have chosen is "Recency, Frequency, and Monetary (RFM) Analysis". This topic is relevant for understanding customer behavior and segmenting customers based on their purchasing patterns, which can help in targeted marketing and improving customer retention. The primary question is "Who are our most valuable customers based on their purchasing behavior?" The secondary question is "How can we segment our customers to tailor marketing strategies effectively?"
 
 # Conda environment
 A conda environment was created with the following command:
@@ -25,7 +23,7 @@ Add an extractor to ingest the Olist csv files::
 meltano add tap-csv
 ```
 Configure the tap to read the Olist dataset from a local directory.
-Create a `meltano.yml` file. Refer to the meltano.yml file in the repository for the complete configuration.
+Create a `meltano.yml` file. Refer to the [meltano.yml](/ingestion/olist-ingestion/meltano.yml) file in the repository for the complete configuration.
 
 Add a loader to load the data into BigQuery:
 
@@ -58,6 +56,10 @@ meltano run tap-csv target-bigquery
    **Solution**: I moved the dataset to a directory, data, in the root of the meltano project and updated the file paths in the meltano.yml file accordingly.
 2. **Issue**: There is a failure in ingestion 'product_category_name_translation.csv' due to the presence of special characters (Portuguese characters) in the file.
    **Solution**: Since this file is not critical for the analysis, I decided to exclude it from the ingestion process by removing it from the file paths in the meltano.yml configuration.
+
+## Joining tables between the `products` and `product_category_name_translation` tables in BigQuery
+As the `product_category_name` field in the `products` table is in Portuguese, we need to convert it to English for better analysis. The `product_category_name_translation` table contains the translations of the category names from Portuguese to English.
+To join the `products` and `product_category_name_translation` tables in BigQuery, we can use the following SQL code. Refer to the `sql_codes.md` file in the repository for the complete SQL code.
 
 # Data Transformation with dbt
 ## Setting up a dbt project with BigQuery  
