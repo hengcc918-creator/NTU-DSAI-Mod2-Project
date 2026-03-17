@@ -4,6 +4,9 @@ Create a Meltano project: olist-ingestion
 
 ```bash
 meltano init olist-ingestion
+```
+This will create a new directory called `olist-ingestion` with the necessary files and folders for a Meltano project.
+```bash
 cd olist-ingestion
 ```
 
