@@ -48,4 +48,4 @@ meltano run tap-csv target-bigquery
 1. **Issue**: The tap-csv was not able to read the csv files due to file paths as it was very long and had spaces in it.\
    **Solution**: I moved the dataset to a directory, data, in the root of the meltano project and updated the file paths in the [meltano.yml](meltano.yml) file accordingly.
 2. **Issue**: There is a failure in ingestion 'product_category_name_translation.csv' due to the presence of special characters (Portuguese characters) in the file.\
-   **Solution**: I have manually uploaded this file to BigQuery and excluded it from the ingestion process by removing it from the file paths in the [meltano.yml](meltano.yml) configuration.
+   **Solution**: I have manually uploaded this file to BigQuery and excluded it from the ingestion process by removing it from the file paths in the [meltano.yml](meltano.yml) configuration. This allowed the rest of the files to be ingested successfully while still ensuring that the data from 'product_category_name_translation.csv' is available in BigQuery for analysis.
