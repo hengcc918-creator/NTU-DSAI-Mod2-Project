@@ -23,6 +23,9 @@ conda env create --file proj-environment.yml
 ```
 This environment includes the necessary dependencies for both dbt and Meltano, as well as other libraries that may be useful for data analysis and visualization.
 
+## Data Pipeline Overview
+![Data Pipeline](presentation/data_pipeline.jpg)
+
 ## Data Ingestion with Meltano
 The data ingestion process involves setting up a Meltano project, configuring the tap to read the Olist dataset from a local directory, and configuring the target to load the data into BigQuery. 
 Refer to the [README_meltano.md](ingestion/olist-ingestion/README_meltano.md) file for detailed instructions on setting up and running the Meltano project.
