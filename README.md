@@ -39,3 +39,10 @@ Refer to the [README_dbt.md](olist_dbt/README_dbt.md) file for detailed instruct
 
 ## Data Quality Check and Testing with Great Expectations
 In this section, we will implement data quality checks using Great Expectations to ensure the integrity and reliability of our data. Refer to the [README_gx.md](gx_test/README_gx.md) file and [gx_testing.ipynb](gx_test/gx_testing.ipynb) notebook for detailed instructions on setting up and running the Great Expectations project.
+
+## Exploratory Data Analysis (EDA)
+After the data has been ingested and transformed, we can perform exploratory data analysis to gain insights into customer behavior and sales performance. The EDA will focus on analyzing customer distribution, sales revenue, and other relevant metrics to identify trends and patterns. Refer to the [EDA.ipynb](eda/EDA.ipynb) notebook for detailed analysis and visualizations.\
+\
+The presentation slides for the EDA can be found in the [presentation/DSAI_Mod2_Grp2.pdf](presentation/DSAI_Mod2_Grp2.pdf) file.
+
+
